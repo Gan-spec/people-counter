@@ -1,0 +1,84 @@
+╔═══════════════════════════════════════════════════════════════╗
+║         PEOPLE COUNTER - FILES TO TRANSFER                    ║
+╚═══════════════════════════════════════════════════════════════╝
+
+📁 IOT/
+│
+├── 📁 laptop_server/                    ← MAIN FOLDER
+│   │
+│   ├── 🔴 app.py                        ← Web server (REQUIRED)
+│   ├── 🔴 people_counter.py             ← Main logic (REQUIRED)
+│   ├── 🔴 requirements.txt              ← Dependencies (REQUIRED)
+│   │
+│   ├── 📁 models/                       ← AI Model (REQUIRED)
+│   │   ├── 🔴 yolov4-tiny.weights      ← 23MB - VERY IMPORTANT!
+│   │   ├── 🔴 yolov4-tiny.cfg          ← Config file
+│   │   └── 🔴 coco.names               ← Class names
+│   │
+│   ├── 🟡 people_log.csv                ← Your data (OPTIONAL)
+│   ├── 🟡 populate_historical_data.py   ← Data generator (OPTIONAL)
+│   └── 🟢 test_*.py                     ← Test files (SKIP)
+│
+├── 🟡 find_esp32.py                     ← Find ESP32 IP (RECOMMENDED)
+├── 🟢 README.md                         ← Documentation (OPTIONAL)
+├── 🟢 TRANSFER_GUIDE.md                 ← This guide (OPTIONAL)
+└── 🟢 TRANSFER_CHECKLIST.txt            ← Checklist (OPTIONAL)
+
+╔═══════════════════════════════════════════════════════════════╗
+║  LEGEND                                                       ║
+╠═══════════════════════════════════════════════════════════════╣
+║  🔴 REQUIRED    - Must transfer, won't work without these     ║
+║  🟡 RECOMMENDED - Should transfer, very useful                ║
+║  🟢 OPTIONAL    - Nice to have, but not necessary             ║
+╚═══════════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════╗
+║  MINIMUM PACKAGE (REQUIRED FILES ONLY)                        ║
+╠═══════════════════════════════════════════════════════════════╣
+║  Size: ~25-30 MB                                              ║
+║  Files: 6 files                                               ║
+║  Time to transfer: 2-5 minutes (USB)                          ║
+╚═══════════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════╗
+║  RECOMMENDED PACKAGE (REQUIRED + RECOMMENDED)                 ║
+╠═══════════════════════════════════════════════════════════════╣
+║  Size: ~30-35 MB (depends on data size)                       ║
+║  Files: 8-10 files                                            ║
+║  Time to transfer: 5-10 minutes (USB)                         ║
+╚═══════════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════╗
+║  FULL PACKAGE (EVERYTHING)                                    ║
+╠═══════════════════════════════════════════════════════════════╣
+║  Size: ~35-50 MB                                              ║
+║  Files: All files                                             ║
+║  Time to transfer: 10-15 minutes (USB)                        ║
+╚═══════════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════╗
+║  QUICK TRANSFER METHODS                                       ║
+╠═══════════════════════════════════════════════════════════════╣
+║  1. USB Drive        → Copy entire IOT folder (FASTEST)       ║
+║  2. Cloud Storage    → ZIP and upload to Google Drive         ║
+║  3. GitHub           → Push and clone (BEST for version ctrl) ║
+║  4. Network Transfer → Use Python HTTP server                 ║
+╚═══════════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════╗
+║  AFTER TRANSFER - SETUP STEPS                                 ║
+╠═══════════════════════════════════════════════════════════════╣
+║  1. Install Python 3.8+                                       ║
+║  2. pip install -r requirements.txt                           ║
+║  3. Update ESP32 IP in people_counter.py (line 18)            ║
+║  4. Run: python people_counter.py                             ║
+║  5. Run: python app.py                                        ║
+║  6. Open: http://localhost:5000                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+⚠️  CRITICAL: Don't forget the yolov4-tiny.weights file (23MB)!
+             Without it, the system won't detect people!
+
+📝 For detailed instructions, see TRANSFER_GUIDE.md
+✅ For step-by-step checklist, see TRANSFER_CHECKLIST.txt
+🚀 For quick setup, see QUICK_TRANSFER.md

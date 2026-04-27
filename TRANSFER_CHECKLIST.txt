@@ -1,0 +1,82 @@
+═══════════════════════════════════════════════════════════════
+  PEOPLE COUNTER - TRANSFER CHECKLIST
+═══════════════════════════════════════════════════════════════
+
+📦 FILES TO TRANSFER (Check each as you copy)
+═══════════════════════════════════════════════════════════════
+
+ESSENTIAL FILES (MUST HAVE):
+  [ ] app.py
+  [ ] people_counter.py
+  [ ] requirements.txt
+  [ ] models/yolov4-tiny.weights (23MB - IMPORTANT!)
+  [ ] models/yolov4-tiny.cfg
+  [ ] models/coco.names
+
+OPTIONAL BUT RECOMMENDED:
+  [ ] people_log.csv (your historical data)
+  [ ] find_esp32.py (find ESP32 IP)
+  [ ] populate_historical_data.py (generate test data)
+  [ ] README.md (documentation)
+
+═══════════════════════════════════════════════════════════════
+🚀 SETUP ON NEW LAPTOP
+═══════════════════════════════════════════════════════════════
+
+STEP 1: CHECK PYTHON
+  [ ] Python 3.8+ installed (check: python --version)
+  [ ] pip is working (check: pip --version)
+
+STEP 2: INSTALL PACKAGES (Choose one method)
+  
+  METHOD A - Automatic (Easiest):
+  [ ] Run: python install_dependencies.py
+  
+  METHOD B - Using requirements.txt:
+  [ ] Run: pip install -r requirements.txt
+  
+  METHOD C - Manual:
+  [ ] pip install flask==3.0.0
+  [ ] pip install opencv-python==4.8.1.78
+  [ ] pip install numpy==1.24.3
+  [ ] pip install scipy==1.11.4
+  [ ] pip install requests==2.31.0
+
+STEP 3: VERIFY INSTALLATION
+  [ ] Run: python -c "import cv2; print('OK')"
+  [ ] Should print "OK" without errors
+
+STEP 4: CONFIGURE
+  [ ] Verify YOLO weights file is ~23MB
+  [ ] Update ESP32 IP in people_counter.py (line 18)
+  [ ] Both laptops on same WiFi as ESP32
+
+STEP 5: RUN
+  [ ] Terminal 1: python people_counter.py
+  [ ] Terminal 2: python app.py
+  [ ] Browser: http://localhost:5000
+
+═══════════════════════════════════════════════════════════════
+⚙️ CONFIGURATION TO UPDATE
+═══════════════════════════════════════════════════════════════
+
+  [ ] ESP32 IP address in people_counter.py
+      Line 18: ESP32_CAPTURE_URL = "http://YOUR_IP/capture"
+      
+      To find IP: python find_esp32.py
+
+═══════════════════════════════════════════════════════════════
+✅ VERIFICATION
+═══════════════════════════════════════════════════════════════
+
+  [ ] No "module not found" errors
+  [ ] Can connect to ESP32 (check terminal output)
+  [ ] Web page loads at http://localhost:5000
+  [ ] Video feed shows (or "NO SIGNAL" if ESP32 off)
+  [ ] Historical data shows in table (if transferred)
+
+═══════════════════════════════════════════════════════════════
+📊 TOTAL SIZE: ~25-30 MB (with YOLO model)
+⏱️  TRANSFER TIME: 10-20 minutes
+⏱️  SETUP TIME: 15-30 minutes
+═══════════════════════════════════════════════════════════════
